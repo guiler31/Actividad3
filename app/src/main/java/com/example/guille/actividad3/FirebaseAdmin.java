@@ -23,7 +23,7 @@ import static android.content.ContentValues.TAG;
 
 public class FirebaseAdmin {
 
-    private FirebaseAuth mAuth;
+    public FirebaseAuth mAuth;
     private FirebaseAdminListener listener;
     public FirebaseUser user;
     public FirebaseDatabase database;
