@@ -8,9 +8,13 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.facebook.AccessToken;
+import com.facebook.AccessTokenTracker;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
+import com.facebook.GraphRequest;
+import com.facebook.GraphResponse;
+import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -33,9 +37,11 @@ public class FBLogin extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_fblogin);
         callbackManager = CallbackManager.Factory.create();
-        loginButton = (LoginButton) findViewById(R.id.login_button);
+
+        setContentView(R.layout.activity_fblogin);
+
+        loginButton = findViewById(R.id.login_button);
         loginButton.setReadPermissions(Arrays.asList(
                 "public_profile", "email"));
 
@@ -49,47 +55,6 @@ public class FBLogin extends AppCompatActivity {
                 // App code
                 Log.v("LogFB", "bien");
                 handleFacebookAccessToken(loginResult.getAccessToken());
-
-                private Bundle getFacebookData(JSONObject object){
-                    Bundle bundle = new Bundle();
-
-                    try {
-                        String id = object.getString("id");
-                        URL profile_pic;
-                        try {
-                            profile_pic = new URL("https://graph.facebook.com/" + id + "/picture?type=large");
-                            Log.i("profile_pic", profile_pic + "");
-                            bundle.putString("profile_pic", profile_pic.toString());
-                        } catch (MalformedURLException e) {
-                            e.printStackTrace();
-                            return null;
-                        }
-
-                        bundle.putString("idFacebook", id);
-                        if (object.has("first_name"))
-                            bundle.putString("first_name", object.getString("first_name"));
-                        if (object.has("last_name"))
-                            bundle.putString("last_name", object.getString("last_name"));
-                        if (object.has("email"))
-                            bundle.putString("email", object.getString("email"));
-                        if (object.has("gender"))
-                            bundle.putString("gender", object.getString("gender"));
-
-
-                        prefUtil.saveFacebookUserInfo(object.getString("first_name"),
-                                object.getString("last_name"),object.getString("email"),
-                                object.getString("gender"), profile_pic.toString());
-
-                    } catch (Exception e) {
-                        Log.d(TAG, "BUNDLE Exception : "+e.toString());
-                    }
-
-                    return bundle;
-                }
-
-
-
-
             }
 
             @Override
@@ -111,8 +76,10 @@ public class FBLogin extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         callbackManager.onActivityResult(requestCode, resultCode, data);
+
         super.onActivityResult(requestCode, resultCode, data);
     }
+
     private void handleFacebookAccessToken(AccessToken token) {
 
         AuthCredential credential = FacebookAuthProvider.getCredential(token.getToken());
@@ -132,9 +99,7 @@ public class FBLogin extends AppCompatActivity {
                                     Toast.LENGTH_SHORT).show();
                             //updateUI(null);
                         }
-
                         // ...
-
 
                     }
                 });

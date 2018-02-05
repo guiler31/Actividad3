@@ -3,4 +3,5 @@
     <string name="title_activity_maps">Map</string>
     <string name="facebook_app_id" translatable="false">143153709693280</string>
     <string name="fb_login_protocol_scheme" translatable="false">fb143153709693280</string>
+    <string name="default_notification_channel_id" translatable="false">Notificacion</string>
 </resources>
