@@ -2,11 +2,9 @@ package com.example.guille.actividad3.Adapter;
 
 
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import com.example.guille.actividad3.FBObjects.FBCoche;
 import com.example.guille.actividad3.R;

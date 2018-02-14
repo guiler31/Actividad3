@@ -1,7 +1,5 @@
 package com.example.guille.milib;
 
-import android.view.View;
-
 /**
  * Created by guille on 18/12/17.
  */

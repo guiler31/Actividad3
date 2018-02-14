@@ -18,7 +18,6 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.GenericTypeIndicator;
 
 import java.util.ArrayList;
-import java.util.Map;
 
 public class SecondActivity extends AppCompatActivity {
     ListaFragment listaFragmentNoticias;

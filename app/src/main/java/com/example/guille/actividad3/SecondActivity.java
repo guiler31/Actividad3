@@ -8,15 +8,12 @@ import android.util.Log;
 import com.example.guille.actividad3.Adapter.CocheViewHolder;
 import com.example.guille.actividad3.Adapter.ListaCochesAdapter;
 import com.example.guille.actividad3.Adapter.ListaCochesAdapterListener;
-import com.example.guille.actividad3.Adapter.ListaMensajesAdapter;
 import com.example.guille.actividad3.FBObjects.FBCoche;
-import com.example.guille.actividad3.FBObjects.Mensajes;
 import com.example.guille.milib.GPSAdmin.GPSTracker;
 import com.example.guille.milib.ListaFragment;
 import com.example.guille.milib.MapDetailFragment;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.GoogleMapOptions;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
@@ -26,7 +23,6 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.GenericTypeIndicator;
 
 import java.util.ArrayList;
-import java.util.Map;
 
 public class SecondActivity extends AppCompatActivity {
     ListaFragment listaFragmentCoches;

@@ -13,8 +13,6 @@ import android.view.ViewGroup;
 import com.example.guille.dint3.dummy.DummyContent;
 import com.example.guille.dint3.dummy.DummyContent.DummyItem;
 
-import java.util.List;
-
 /**
  * A fragment representing a list of Items.
  * <p/>

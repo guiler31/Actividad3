@@ -10,7 +10,6 @@ import com.example.guille.milib.LoginFragment;
 import com.example.guille.milib.LoginFragmentListener;
 import com.example.guille.milib.RegisterFragment;
 import com.example.guille.milib.RegisterFragmentsListener;
-import com.google.android.gms.common.data.DataHolder;
 import com.google.firebase.database.DataSnapshot;
 
 public class MainActivity extends AppCompatActivity {

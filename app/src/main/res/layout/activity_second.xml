@@ -8,7 +8,7 @@
     <!--
     <fragment
         android:id="@+id/fragmentListMensajes"
-        android:name="com.example.guille.milib.ListaFragment"
+        android:naguilllle.milib.ListaFragment"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
